@@ -1,7 +1,7 @@
 function meuEscopo() {
   const form = document.querySelector('.form')
   const resultado = document.querySelector('.resultado')
-  const array = []
+  const pessoas = []
   let objeto = {}
 
 
@@ -11,18 +11,26 @@ function meuEscopo() {
     const sobrenome = form.querySelector('.sobrenome')
     const peso = form.querySelector('.peso')
     const altura = form.querySelector('.altura')
+    const resultado = document.querySelector('.resultado')
 
-    objeto.nome = nome.value
-    objeto.sobrenome = sobrenome.value
-    objeto.peso = peso.value
-    objeto.altura= altura.value
+    
 
-    array.push(objeto)
+    pessoas.push({
+      nome:nome.value,
+      sobrenome:sobrenome.value,
+      peso:peso.value,
+      altura:altura.value,
+    })
 
 
+
+    //Adicionar o retorno do array dentro da div de resultado
       
     console.log(objeto)
-    console.log(array)
+    console.log(pessoas)
+
+    resultado.innerHTML += `<p> ${nome.value} ${sobrenome.value} ` + `${peso.value} ${altura.value}</p>`
+
   }
   
   form.addEventListener("submit", recebeEventoForm);
