@@ -1,20 +1,29 @@
-var form = document.querySelector('#form')
-var resultado = document.querySelector('#resultado')
-console.log(resultado)
+const form = document.querySelector("#form");
 
-addEventListener('submit', function(e){
-    e.preventDefault()
-    console.log('evento cancelado')
+console.log(resultado);
 
-    setResultado('olá')
-})
 
-function setResultado (msg){
-resultado.innerHTML = ''
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const inputPeso = e.target.querySelector('#peso')
+  const inputAltura = e.target.querySelector('#altura')
+
+  const peso = Number(inputPeso.value)
+  const altura = Number(inputAltura.value)
+
+  console.log(peso, altura)
+});
+
+function criarParagrafo(className) {
+  const p = document.createElement("p");
+  return p;
+}
+function setResultado(msg) {
+  const resultado = document.querySelector("#resultado");
+  resultado.innerHTML = ''
+  const p = criarParagrafo()
+
+
 }
 
-function criarParagrafo(){
-    const p = document.createElement('p')
-    p.classList = ('paragrafo-resultado')
-    resultado.appendChild(p)
-}
